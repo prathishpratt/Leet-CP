@@ -11,4 +11,27 @@ class Solution:
                 j +=1
             else:
                 i +=1
+                
         return sl
+    
+    #if you need the substring itself then,
+    # def longest_substring(s):
+    # """
+    # input: string
+    # output: longest substring without repeating characters
+    # """
+    # i = 0
+    # j = 1
+    # leng = ""
+    # while(j < len(s)):
+    #     t = s[i:j]
+
+    #     if len(t) == len(set(t)):
+    #         j = j+1
+    #     else:
+    #         t = t[0:-1]
+    #         if len(t)>len(leng):
+    #             leng = t
+    #         i = i+1
+    #         j = j+1
+    # return leng
