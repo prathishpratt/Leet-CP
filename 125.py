@@ -1,4 +1,5 @@
 def isPalindrome(self, s: str) -> bool:
+        
         k= ""
         for i in s:
             if i.isalnum():
