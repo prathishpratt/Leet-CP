@@ -1,18 +1,35 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        i,j,sl = 0,1,0
-        
-        if(len(s))==1:
-            return 1
+        has = {}
+        l = 0
+        r = 0
+        leng = 0
 
-        while(j<len(s)):
-            if (len(s[i:j+1])==len(set(s[i:j+1]))):
-                sl = max(sl,len(s[i:j+1]))
-                j +=1
+        while(r<len(s)):
+            if s[r] in has.keys():
+                del has[s[l]]
+                l = l+1
             else:
-                i +=1
-                
-        return sl
+                has[s[r]] = 1
+                leng = max(leng, r-l+1)
+                r = r+1
+        return leng
+
+# class Solution:
+#     def lengthOfLongestSubstring(self, s: str) -> int:
+#         i,j,sl = 0,1,0
+        
+#         if(len(s))==1:
+#             return 1
+
+#         while(j<len(s)):
+#             if (len(s[i:j+1])==len(set(s[i:j+1]))):
+#                 sl = max(sl,len(s[i:j+1]))
+#                 j +=1
+#             else:
+#                 i +=1
+#         return sl
+        
     
     #if you need the substring itself then,
     # def longest_substring(s):
