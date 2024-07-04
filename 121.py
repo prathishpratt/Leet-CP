@@ -1,14 +1,15 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        l,summ,r=0,0,1
-        if len(prices)==1:
+        prof = 0
+        i, j = 0, 0 
+
+        if len(prices)<2:
             return 0
         
-        while(r<len(prices)):
-            if prices[l]<=prices[r]:
-                summ = max(summ,prices[r]-prices[l])
-                r = r+1
+        while(j<len(prices)):
+            if (prices[j]>= prices[i]):
+                prof = max(prices[j]-prices[i], prof)
             else:
-                l = r
-                r= r+1
-        return summ
+                i = j
+            j=j+1
+        return prof
