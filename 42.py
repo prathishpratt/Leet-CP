@@ -1,20 +1,20 @@
 class Solution:
-    def trap(self, height: List[int]) -> int:
-        n = len(height)
-        l,r,tot =0,n-1,0
-        leftmax,rightmax = 0,0
+    def trap(self, nums: List[int]) -> int:
+        if not nums:
+            return 0
 
-        while(l<=r):
-            if(height[l]<=height[r]):
-                if height[l]>=leftmax:
-                    leftmax = height[l]
-                else:
-                    tot = tot+ (leftmax-height[l])
+        l ,r =0, len(nums)-1
+        leftmax = nums[l]
+        rightmax = nums[r]
+        res = 0
+
+        while(l<r):
+            if leftmax<=rightmax:
                 l +=1
+                leftmax = max(leftmax,nums[l])
+                res= res + leftmax - nums[l]
             else:
-                if height[r]>rightmax:
-                    rightmax = height[r]
-                else:
-                    tot = tot + (rightmax-height[r])
-                r -=1
-        return tot
+                r =r-1
+                rightmax = max(rightmax,nums[r])
+                res= res + rightmax - nums[r]
+        return res
