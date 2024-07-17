@@ -1,14 +1,31 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        stack = []
-        Openclose = { "]" : "[", "}" : "{", ")" : "("}
+        # i = 0
+        # j = len(s)-1
 
-        for i in s:
-            if i in Openclose.keys():
-                if stack and stack[-1] == Openclose[i]:
+        # while(j>i):
+        #     if s[i] == "(":
+        #         if s[j] != ")":
+        #             return False
+        #     elif s[i] == "{":
+        #         if s[j] != "}":
+        #             return False
+        #     elif s[i] == "[":
+        #         if s[j] != "]":
+        #             return False
+        #     i = i+1
+        #     j = j-1
+        # return True
+        
+        openclose = {']':'[', '}':'{', ')':'('}
+        stack = []
+
+        for i in range(0,len(s)):
+            if s[i] in openclose.keys() and stack:
+                if stack[-1] == openclose[s[i]]:
                     stack.pop()
                 else:
                     return False
             else:
-                stack.append(i)
-        return False if stack else True  
+                stack.append(s[i])
+        return False if stack else True
