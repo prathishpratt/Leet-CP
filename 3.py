@@ -15,6 +15,28 @@ class Solution:
                 r = r+1
         return leng
 
+
+# class Solution:
+#     def lengthOfLongestSubstring(self, s: str) -> int:
+#         has = {}
+#         l = 0
+#         r = 0
+#         ans = 0
+#         if len(s) <2: return len(s)
+        
+#         while(r<len(s)):
+#             has[s[r]] = 1 + has.get(s[r],0)
+#             while has[s[r]] > 1:
+#                 if has[s[l]] == 1:
+#                     del has[s[l]]
+#                 else:
+#                     has[s[l]] = has[s[l]] -1
+#                 l = l+1
+#             ans = max(ans,r-l)
+#             r = r+1
+#         return ans+1
+        
+
 # class Solution:
 #     def lengthOfLongestSubstring(self, s: str) -> int:
 #         i,j,sl = 0,1,0
@@ -29,8 +51,8 @@ class Solution:
 #             else:
 #                 i +=1
 #         return sl
-        
-    
+
+
     #if you need the substring itself then,
     # def longest_substring(s):
     # """
