@@ -16,7 +16,9 @@ class Solution:
             return self.lowestCommonAncestor(root.right, p, q)
         elif root.val > p.val and root.val > q.val:
             return self.lowestCommonAncestor(root.left, p, q)
-            
+
+        #List Solution
+
         # lst1, lst2 = [], []
         # def find(root, target, lst):
         #     if root == None:
