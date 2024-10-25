@@ -12,8 +12,15 @@ class Solution:
                     i -= 1
                 maxi = max(maxi,leng)
 
-        return maxi            
-        
+        return maxi     
+        #     if i-1 not in sets:
+        #         while (i+1) in sets:
+        #             leng +=1
+        #             i = i+1
+        #         maxi = max(leng,maxi)
+        # return maxi 
+
+
         #check if left does not exist 
         
         # seen = set(nums)
