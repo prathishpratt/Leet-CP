@@ -30,4 +30,18 @@ class Solution:
         return lst
 
 
+        # has, lst = {}, []
+
+        # for i in strs:
+        #     j = str(sorted(i))
+        #     if j in has.keys():
+        #         has[j].append(i)
+        #     else:
+        #         has[j] = [i]
+
+        # for i in has.keys():
+        #     lst.append(has[i])
+        # return lst
+        
+
         
