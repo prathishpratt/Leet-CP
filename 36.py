@@ -8,17 +8,17 @@ class Solution:
         return len(res) == len(set(res))
 
 #Bad Solution
-for i in range(9):
-            for j in range(9):
-                x = board[i][j]
-                if x!= '.':
-                    y = [(i,x), (x, j), (i//3,j//3, x)]
-                    for j in y:
-                        if j in res:
-                            return False
-                        else:
-                            res.append(j)
-        return True
+# for i in range(9):
+#             for j in range(9):
+#                 x = board[i][j]
+#                 if x!= '.':
+#                     y = [(i,x), (x, j), (i//3,j//3, x)]
+#                     for j in y:
+#                         if j in res:
+#                             return False
+#                         else:
+#                             res.append(j)
+#         return True
 
 
 #Another solution
