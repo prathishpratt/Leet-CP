@@ -7,6 +7,22 @@ class Solution:
                     res += [(i,board[i][j]), (board[i][j], j), (i//3,j//3, board[i][j])]
         return len(res) == len(set(res))
 
+#Bad Solution
+for i in range(9):
+            for j in range(9):
+                x = board[i][j]
+                if x!= '.':
+                    y = [(i,x), (x, j), (i//3,j//3, x)]
+                    for j in y:
+                        if j in res:
+                            return False
+                        else:
+                            res.append(j)
+        return True
+
+
+#Another solution
+
 # class Solution:
 #     def isValidSudoku(self, board: List[List[str]]) -> bool:
 #         board = np.array(board)
