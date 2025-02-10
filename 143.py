@@ -53,3 +53,42 @@ class Solution:
             i = i+1
             j = j-1
         return head
+
+
+# Mine - Latest and better
+# def reorderList(self, head: Optional[ListNode]) -> None:
+#         # First find the middle element
+#         # Then Break them as two LL
+#         # Then reverse the second part
+#         # Then merge them
+
+#         slow = head
+#         fast = head.next
+
+#         while fast and fast.next:
+#             slow = slow.next
+#             fast = fast.next.next
+
+#         temp = slow.next
+#         prev = slow.next = None
+
+#         #reverse the LL
+#         while temp:
+#             nxt = temp.next
+#             temp.next = prev
+#             prev = temp
+#             temp = nxt
+        
+#         list1 = head
+#         list2 = prev
+
+#         #now merge
+#         while list1 and list2:
+#             nxt1 = list1.next
+#             nxt2 = list2.next
+
+#             list1.next = list2
+#             list2.next = nxt1
+            
+#             list1 = nxt1
+#             list2 = nxt2
